@@ -9,9 +9,9 @@ This action executes depends analysis.
 
 ## Outputs
 
-### `depends`
+### `depends.json`
 
-The result of the depends analysis in JSON format.
+The result of the depends analysis in JSON format as a file in the root folder of the runner. This file can be uploaded as an artifact in the same workflow or can be used as is in the same job context.
 
 ## Example usage
 
@@ -23,10 +23,11 @@ on: [push]
 jobs:
   depends_job:
     runs-on: ubuntu-latest
-    name: Depends analysis.
+    name: Depends analysis
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Execute depends.
         id: depends
         uses: hdmsantander/depends-docker-action@1.0

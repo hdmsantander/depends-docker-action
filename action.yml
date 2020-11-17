@@ -7,7 +7,7 @@ inputs:
     required: true
     default: 'java src'
 outputs:
-  depends:
+  result:
     description: 'The result of the depends analysis'
 runs:
   using: 'docker'
