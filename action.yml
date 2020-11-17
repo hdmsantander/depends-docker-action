@@ -1,0 +1,19 @@
+# action.yml
+name: 'Depends docker action'
+description: 'Executes depends analysis'
+inputs:
+  args:
+    description: 'CLI args, lang and source code folder'
+    required: true
+    default: 'java src'
+outputs:
+  depends:
+    description: 'The result of the depends analysis'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
+branding:
+    icon: "code"
+    color: "black"
